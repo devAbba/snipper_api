@@ -1,0 +1,38 @@
+<%- include('partials/head') %>
+<body>
+    <div class="container">
+        <div class="signup-form">
+            <form action="" method="POST">
+                <div class="mb-3">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input type="text" name="first_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input type="text" name="last_name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" placeholder="name@example.com">
+                </div>
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="password" class="col-form-label">Password</label>
+                    </div>
+                    <div class="col-auto">
+                      <input type="password" name="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                    <div class="col-auto">
+                      <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                      </span>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success">Signup</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
