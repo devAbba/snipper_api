@@ -18,7 +18,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       password: {
+        type: Sequelize.STRING(64)
+      },
+      password_reset_token: {
         type: Sequelize.STRING
+      },
+      reset_token_expires: {
+        type: Sequelize.BIGINT
       },
       createdAt: {
         allowNull: false,

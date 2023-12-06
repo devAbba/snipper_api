@@ -5,18 +5,19 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
     },
+    url_id: DataTypes.UUID,
     clicks: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
     },
-    urlId: DataTypes.UUID
+    
   }, {})
 
   Analytics.associate = models => {
     //associations defined here
     Analytics.belongsTo(models.Url, {
-      foreignKey: 'urlId',
+      foreignKey: 'url_id',
       as: 'analytics'
     })
   }

@@ -14,7 +14,7 @@ module.exports = {
       short: {
         type: Sequelize.STRING
       },
-      userId: {
+      user_id: {
         type: Sequelize.UUID
       },
       createdAt: {

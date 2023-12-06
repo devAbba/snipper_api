@@ -3,6 +3,7 @@ const User = db.User;
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 
+
 exports.newUser = async (req, res) => {
     try {
         const {
@@ -26,10 +27,12 @@ exports.newUser = async (req, res) => {
 }
 
 exports.login = (req, res) => {
-    res.status(200).json({
-        status: true,
-        user: req.user
-    })    
+    if (req.user) {
+        res.status(200).json({
+            status: true,
+            message: "logged in successfully!"
+        })
+    }
 }
 
 exports.logout = (req, res) => {
@@ -61,7 +64,14 @@ exports.allUser = async (req, res) => {
 }
 
 exports.getUser = async (req, res) => {
-    const {email} = req.params
-    const user = await User.findOne({where: {'email': email}})
-    res.json({status: true, user})
+    try {
+
+        const {email} = req.params
+        const user = await User.findOne({where: {'email': email}})
+        res.json({status: true, user})
+
+    } catch (error) {
+        console.log(error)
+    }
+    
 }

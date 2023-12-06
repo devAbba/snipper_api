@@ -7,8 +7,8 @@ exports.newUrl = async(req, res) => {
         const { user } = req.session.passport
         const { full } = req.body
 
-        const short = await Url.create({full, userId: user})
-        await db.Analytics.create({urlId: short.id})
+        const short = await Url.create({full, user_id: user})
+        await db.Analytics.create({url_id: short.id})
         if (short){
             res.status(201).json({
                 status: true,
@@ -83,7 +83,7 @@ exports.allUrl = async (req, res) => {
 exports.userUrls = async (req, res) => {
     try {
         const { user } = req.session.passport
-        const urls = await Url.findAll({where : {userId: user}, 
+        const urls = await Url.findAll({where : {user_id: user}, 
             include: [
                 {
                     model: db.Analytics,

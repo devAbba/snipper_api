@@ -1,4 +1,3 @@
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     id: {
@@ -21,6 +20,14 @@ module.exports = (sequelize, DataTypes) => {
     },
     password: {
       type: DataTypes.STRING(64),
+    },
+    password_reset_token: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    reset_token_expires: {
+      type: DataTypes.BIGINT,
+      allowNull: true
     }
   }, {})
 
@@ -28,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     //association definitions here
     User.hasMany(models.Url, {
       foreignKey: {
-        name: 'userId',
+        name: 'user_id',
         type: DataTypes.UUID,
         allowNull: false
       },

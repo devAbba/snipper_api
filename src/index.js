@@ -13,7 +13,7 @@ const swaggerUi = require('swagger-ui-express');
 const swagger_options = require('./config/swagger.config');
 
 const router = require('./routes')
-const urlController = require('./controllers/urls.controller');
+const urlController = require('./controllers/url.controller');
 
 const PORT = process.env.PORT;
 
