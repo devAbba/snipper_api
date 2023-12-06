@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const urlController = require('../controllers/urls.controller');
+const urlController = require('../controllers/url.controller');
 
 /**
  * @swagger

@@ -8,11 +8,11 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.UUID
       },
+      url_id: {
+        type: Sequelize.UUID
+      },
       clicks: {
         type: Sequelize.INTEGER
-      },
-      urlId: {
-        type: Sequelize.UUID
       },
       createdAt: {
         allowNull: false,
